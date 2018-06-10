@@ -26,11 +26,12 @@ public class FinalProj extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		textureAtlas = new TextureAtlas(Gdx.files.internal("hoohSpriteSheet/hoohAtlas.atlas"));
+		textureAtlas = new TextureAtlas(Gdx.files.internal("maleSprites/maleAtlas.atlas"));
 		textureRegion = textureAtlas.findRegion("tile000");
 		sprite = new Sprite(textureRegion);
 		sprite.setPosition(Gdx.graphics.getWidth()/2-sprite.getWidth(),Gdx.graphics.getHeight()/2-sprite.getHeight());
-
+		sprite.rotate(90);
+		stillAnimation = new Animation(1/10f,textureAtlas.getRegions());
 	}
 
 	@Override
@@ -38,14 +39,10 @@ public class FinalProj extends ApplicationAdapter {
 		Gdx.gl.glClearColor(Color.BLACK.r, Color.BLACK.g, Color.BLACK.b, Color.BLACK.a);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		if(frame<10) {
-			sprite.setRegion(textureAtlas.findRegion("tile00" + Integer.toString(frame)));
-		}else{
-			sprite.setRegion(textureAtlas.findRegion("tile0" + Integer.toString(frame)));
-		}
+		sprite.setRegion(textureAtlas.findRegion("tile00" + Integer.toString(frame)));
 		sprite.draw(batch);
 		frame++;
-		if (frame == 65)
+		if (frame == 3)
 			frame = 0;
 
 		batch.end();
