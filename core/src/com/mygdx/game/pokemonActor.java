@@ -30,27 +30,23 @@ public class pokemonActor extends Actor {
     float timeforMove = 0.0f;
 
     public pokemonActor() {
-        int random = (int) (Math.random() * 5) + 1;
+        int random = (int) (Math.random() * 4) + 1;
         switch (random) {
             case 1:
                 sprite = new Sprite(new Texture(Gdx.files.internal("dratiniPics/tile000.png")));
                 textureAtlas = new TextureAtlas(Gdx.files.internal("dratiniSprites/dratiniAtlas.atlas"));
                 break;
             case 2:
-                sprite = new Sprite(new Texture(Gdx.files.internal("dratiniPics/tile000.png")));
-                textureAtlas = new TextureAtlas(Gdx.files.internal("flareonSprites/flareonAtlas.atlas"));
+                sprite = new Sprite(new Texture(Gdx.files.internal("glacionPics/tile000.png")));
+                textureAtlas = new TextureAtlas(Gdx.files.internal("glacionSprites/glacionAtlas.atlas"));
                 break;
             case 3:
-                sprite = new Sprite(new Texture(Gdx.files.internal("dratiniPics/tile000.png")));
-                textureAtlas = new TextureAtlas(Gdx.files.internal("dratiniSprites/dratiniAtlas.atlas"));
+                sprite = new Sprite(new Texture(Gdx.files.internal("lucarioPics/tile000.png")));
+                textureAtlas = new TextureAtlas(Gdx.files.internal("lucarioSprites/lucarioAtlas.atlas"));
                 break;
             case 4:
                 sprite = new Sprite(new Texture(Gdx.files.internal("flareonPics/tile000.png")));
                 textureAtlas = new TextureAtlas(Gdx.files.internal("flareonSprites/flareonAtlas.atlas"));
-                break;
-            case 5:
-                sprite = new Sprite(new Texture(Gdx.files.internal("dratiniPics/tile000.png")));
-                textureAtlas = new TextureAtlas(Gdx.files.internal("dratiniSprites/dratiniAtlas.atlas"));
                 break;
         }
         stillAnimation = new Animation(1 / 10f, textureAtlas.getRegions());
